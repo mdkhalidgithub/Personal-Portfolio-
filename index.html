@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin=
+    "anonymous" referrerpolicy="no-referrer" />
+</head>
+<body> 
+
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="image/logo 4.png" class="logo">
+                <ul id="sidemenu" >
+                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+                    <li><a href="#header"><i class="fa-solid fa-house"></i> Home</a></li>
+                    <li><a href="#about"><i class="fa-solid fa-address-card"></i> About</a></li>
+                    <li><a href="#services"><i class="fa-brands fa-servicestack"></i> Service</a></li>
+                    <li><a href="#portfolio"><i class="fa-brands fa-servicestack"></i> Portfolio</a></li>
+                    <li><a href="#contact"><i class="fa-solid fa-id-card-clip"></i> Contact me</a></li>
+                   
+                    
+                    
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+                <div class="header-text">
+                <h1>Hi, I'm<span> Md Khalid</span></h1>
+                <p><b>A passionate Full Stack Software <br>  Developer,<i class="fa-solid fa-code"></i></b><br>      
+                 Having an experience of building<br> Web and Mobile 
+                    applications <br>with  javaScript / Reactjs / Nodejs /<br> React Native and some other<br> cool libraries and frameworks
+                </p>
+                <div class="social-icons">
+                    <a href="https://github.com/mdkhalidgithub"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/md-khalid-6a33b5251/"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://twitter.com/MdKhalid974741"><i class="fa-brands fa-square-x-twitter"></i></a>
+                </div>
+                <a href="image/Md_Khalid_Resume 1.1.pdf" download class="btn btn2"><i class="fa-solid fa-file-arrow-down"></i>Download CV</a>
+            </div>
+            
+        </div>
+        
+    </div>
+      <!-- ----------------About--------- -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="image/khalid about2.png" alt="khalid9">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>Currently i am study computer science engineering with specialization in ,<br>Full-Stack Development from MMDU.</p>
+
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Technical Skills</p>
+                        <p class="tab-links" onclick="opentab('project')">Project</p>
+                        <p class="tab-links" onclick="opentab('education')">Educattion</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Languages:</span><br> Java,javaScript </li>
+                            <li><span>Frameworks:</span><br> MERN </li>
+                            <li><span>Web Technologies:</span><br> HTML5,CSS3,JS,Bootstrap,Tailwind CSS</li>
+                            <li><span>Other:</span><br>Problem solving, Data structures and algorithms.</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="project">
+                        <ul>
+                            <li><span>Portfolio:</span><br>Using HTML,CSS & javaScript</li>
+                            <li><span>Simonsays-games:</span><br>HTML,CSS,javaScript,Bootstrap,..t</li>
+                            <li><span>Spotifys-clones:</span><br>HTML,CSS,</li>
+                            <li><span>Landing-page</span><br>HTML,CSS,</li>
+                            
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>Currently,I am pursuing B.tech(CSE)</span><br>2022-2026</li>
+                            <li><span>12th (BSEB):</span><br>65.4 %</li>
+                            <li><span>10th (BSEB):</span><br>71.8 %</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>Web Development Intern:</span><br>@CodSoft :<br>
+                                HTML,CSS,javaScript,& MERN</li>
+                        </ul>
+                    </div>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!----------------Portfolio----------------------->
+    <div id="portfolio">
+        <div class="container">
+            <h1 class="sub-title">PROJECT</h1>
+            <div class="work-list">
+    
+                <div class="work">
+                    <img src="image/simon-says-big.png">
+                    <div class="layer">
+                        <h3>SIMON GAME</h3>
+                        <p>Build the digital version of the famous"Simon Says" game </p>
+                            <a href="https://simonsays-games.netlify.app/"><i class="fa-solid fa-square-arrow-up-right"></i></a>
+ 
+            </div>
+        </div>
+        <div class="work">
+            <img src="image/spotify2.png">
+            <div class="layer">
+                <h3>SPOTIFY-WEB PLAYER</h3>
+                <p>Build and style a Spotify theme music player page using HTML and CSS.</p>
+                    <a href="https://spotifys-clones.netlify.app/"><i class="fa-solid fa-square-arrow-up-right"></i></a>
+            </div>
+    </div>
+    <div class="work">
+        <img src="image/kh8.1.png">
+        <div class="layer">
+            <h3>Landing-page</h3>
+            <p>Landing-page using HTML,CSS.</p>
+                <a href="https://pageslanding1.netlify.app/"><i class="fa-solid fa-square-arrow-up-right"></i></a>
+        </div>
+
+
+</div>
+</div>
+<a href="#" class="btn">See more</a>
+        </div>
+    </div>
+    <!-----------------------Service------>
+    <div id="services">
+        <div class="container">
+            <h1 class="sub-title">My Services</h1>
+            <div class="services-list"> 
+                <div>
+                    <i class="fa-solid fa-code"></i>
+                    <h2>Website Development</h2>
+                    <p>Unlock the Power of Web Presence with our Professional Website Designing Service! Elevate Your Online Presence with Stunning Website Designs.</p>
+                        <a href="#">Learn more</a>
+                </div>
+                <div>
+                    <i class="fa-brands fa-app-store"></i>
+                    <h2>App Development</h2>
+                    <p>A Complete solution for designing and developing of any Apps .
+                        “Innovate, Create, Connect: Empowering the Digital World through
+                        App Development.</p>
+                        <a href="#">Learn more</a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-crop"></i>
+                    <h2>UI/UX Design</h2>
+                    <p>Our UI/UX design services are crafted with care, considering the latest design trends and business need.</p>
+                        <a href="#">Learn more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-------------------contact---------------------->
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p><i class="fa-solid fa-envelope"></i>mdkhalid8527@gmail.com</p>
+                    <p><i class="fa-solid fa-phone"></i>8527619456</p>
+                    <div class="social-icons">
+                        <a href="https://github.com/mdkhalidgithub"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/md-khalid-6a33b5251/"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://twitter.com/MdKhalid974741"><i class="fa-brands fa-square-x-twitter"></i></a>
+                    </div>
+                    <a href="image/Md_Khalid_Resume 1.1.pdf" download class="btn btn2"><i class="fa-solid fa-file-arrow-down"></i>Download CV</a>
+                </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet" >
+                        <input type="text"  name="Name"  placeholder="Your Name" required>
+                        <input type="email"  name="Email"  placeholder="Your Email" required>
+                        <textarea  name="Message's" rows="10" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form>
+                    <span id="msg"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <p><i class="fa-solid fa-copyright"></i>Md Khalid. Made with<i class="fa-solid fa-heart"></i> by Me</p>
+    </div>
+    <script>
+
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+            }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+       
+    }
+
+        </script>
+
+    <script>
+        var sidemenu = document.getElementById("sidemenu");
+        function openmenu() {
+            sidemenu.style.right = "0";
+        }
+        function closemenu() {
+            sidemenu.style.right = "-200px";
+        }
+    </script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwuV7-v_XeOKo6kBL2E2VZHj1lqmap6ql_HXaHX0lyW0kRdjbC2LuyuRYmK-bLtscrZrA/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg")
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                msg.innerHTML = "Message's sent successfully"
+                setTimeout(function(){
+                    msg.innerHTML = ""
+                },5000)
+                form.reset()
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+
+      
+</body>
+</html>
