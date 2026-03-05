@@ -36,6 +36,7 @@
                 </p>
                 <div class="social-icons">
                     <a href="https://github.com/mdkhalidgithub"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://leetcode.com/u/mdkhalid07"><i class="fa-solid fa-code"></i></a>
                     <a href="https://www.linkedin.com/in/md-khalid-6a33b5251/"><i class="fa-brands fa-linkedin"></i></a>
                     <a href="https://twitter.com/MdKhalid974741"><i class="fa-brands fa-square-x-twitter"></i></a>
                 </div>
@@ -103,6 +104,15 @@
             <h1 class="sub-title">PROJECT</h1>
             <div class="work-list">
     
+                <div class="work">
+                    <img src="image/carental.png">
+                    <div class="layer">
+                        <h3>Car Rental Platform</h3>
+                        <p>Built full-stack platform with React.js, Node.js, Express.js, and MongoDB. Implemented real-time booking system with JWT authentication and automated email confirmations. </p>
+                            <a href="https://carrental-seven-xi.vercel.app/"><i class="fa-solid fa-square-arrow-up-right"></i></a>
+ 
+            </div>
+        </div>
                 <div class="work">
                     <img src="image/simon-says-big.png">
                     <div class="layer">
@@ -173,16 +183,18 @@
                     <p><i class="fa-solid fa-phone"></i>8527619456</p>
                     <div class="social-icons">
                         <a href="https://github.com/mdkhalidgithub"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://leetcode.com/u/mdkhalid07/"><i class="fa-solid fa-code"></i></a>
                         <a href="https://www.linkedin.com/in/md-khalid-6a33b5251/"><i class="fa-brands fa-linkedin"></i></a>
                         <a href="https://twitter.com/MdKhalid974741"><i class="fa-brands fa-square-x-twitter"></i></a>
                     </div>
-                    <a href="image/Md_Khalid_Resume 1.1.pdf" download class="btn btn2"><i class="fa-solid fa-file-arrow-down"></i>Download CV</a>
+                    <a href="image/MdKhalid_Resume (4).pdf" download class="btn btn2"><i class="fa-solid fa-file-arrow-down"></i>Download CV</a>
                 </div>
                 <div class="contact-right">
-                    <form name="submit-to-google-sheet" >
-                        <input type="text"  name="Name"  placeholder="Your Name" required>
-                        <input type="email"  name="Email"  placeholder="Your Email" required>
-                        <textarea  name="Message's" rows="10" placeholder="Your Message"></textarea>
+                    <form id="contactForm">
+                        <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <textarea name="message" rows="10" placeholder="Your Message" required></textarea>
                         <button type="submit" class="btn btn2">Submit</button>
                     </form>
                     <span id="msg"></span>
@@ -222,21 +234,43 @@
         }
     </script>
     <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbwuV7-v_XeOKo6kBL2E2VZHj1lqmap6ql_HXaHX0lyW0kRdjbC2LuyuRYmK-bLtscrZrA/exec'
-        const form = document.forms['submit-to-google-sheet']
-        const msg = document.getElementById("msg")
+        const form = document.getElementById('contactForm')
+        const msg = document.getElementById('msg')
       
-        form.addEventListener('submit', e => {
+        form.addEventListener('submit', async (e) => {
           e.preventDefault()
-          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-            .then(response => {
-                msg.innerHTML = "Message's sent successfully"
-                setTimeout(function(){
-                    msg.innerHTML = ""
-                },5000)
-                form.reset()
+          const submitBtn = form.querySelector('button[type="submit"]')
+          submitBtn.disabled = true
+          submitBtn.textContent = 'Sending...'
+          
+          const formData = new FormData(form)
+          const object = Object.fromEntries(formData)
+          const json = JSON.stringify(object)
+          
+          try {
+            const response = await fetch('https://api.web3forms.com/submit', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+              body: json
             })
-            .catch(error => console.error('Error!', error.message))
+            const result = await response.json()
+            
+            if (result.success) {
+              msg.innerHTML = "Message sent successfully!"
+              msg.style.color = "#61b752"
+              form.reset()
+              setTimeout(() => msg.innerHTML = "", 5000)
+            } else {
+              msg.innerHTML = "Failed to send. Please try again."
+              msg.style.color = "#ff4757"
+            }
+          } catch (error) {
+            msg.innerHTML = "Failed to send. Please try again."
+            msg.style.color = "#ff4757"
+          } finally {
+            submitBtn.disabled = false
+            submitBtn.textContent = 'Submit'
+          }
         })
       </script>
 
